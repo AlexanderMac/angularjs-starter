@@ -1,0 +1,17 @@
+{
+  "globals": {
+    "$"        : true,
+    "_"        : true,
+    "alert"    : true,
+    "confirm"  : true,
+    "angular"  : true,
+    "document" : true,
+    "moment"   : true,
+    "toastr"   : true,
+    "window"   : true
+  },
+  "rules": {
+    "max-len": 0,
+    "max-params": 0
+  }
+}

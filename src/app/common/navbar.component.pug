@@ -1,0 +1,11 @@
+.navbar.navbar-default.navbar-static-top
+  .container
+    .navbar-header
+      a.navbar-brand(href="/") Angular1 starter
+    div
+      ul.nav.navbar-nav
+        li(ng-class="{ active: $ctrl.isActive('/users') }")
+          a(href="#/users") Users
+      ul.nav.navbar-nav.navbar-right
+        li
+          p.navbar-text Hello Guest

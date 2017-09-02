@@ -1,0 +1,29 @@
+nav-bar
+
+spinner(ng-if="$ctrl.isLoading")
+.container(ng-if="!$ctrl.isLoading")
+  .row
+    .col-md-12
+      h2
+        span(ng-if="$ctrl.userId") Edit User {{ ::user.name }}
+        span(ng-if="!$ctrl.userId") Create User
+
+  .row
+    .col-md-12
+      form.form-horizontal(name="userForm")
+        .form-group
+          label.col-md-3.control-label(for="name") Name
+          .col-md-9
+            input.form-control(name="name" ng-model="$ctrl.user.name" placeholder="Name" ng-disabled="$ctrl.isSaving")
+
+        .form-group(ng-class="{ 'has-error': userForm.email.$invalid || userForm.email.$error.required }")
+          label.col-md-3.control-label(for="email") Email*
+          .col-md-9
+            input.form-control(name="email" placeholder="Email" ng-model="$ctrl.user.email" 
+                               ng-required="true" ng-disabled="$ctrl.isSaving")
+
+  .row
+    .col-md-12
+      .buttons.text-right
+        a.btn.btn-default(href="#/users") Cancel
+        button.btn.btn-primary(ng-click="$ctrl.saveUser()" ng-disabled="userForm.$invalid || $ctrl.isSaving") Save
