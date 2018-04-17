@@ -41,9 +41,8 @@ $ npm i
 $ npm run build # build development version
 $ npm run build:production # build production version
 
-# Run jshint tool (one of the commands):
-$ gulp lint # check all sources
-$ gulp lint --filter 'path to source file/folder'
+# Run jshint tool:
+$ gulp lint
 
 # Start app and watch for changes:
 $ npm start
