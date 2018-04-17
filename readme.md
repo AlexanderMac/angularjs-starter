@@ -6,15 +6,18 @@
 ### Features
 - ES6
 - Configured Webpack
+- User CRUD
 - Clean code:)
 
-### Used packages
- - Frontend - `angular v1.6`
- - CSS preprocessor - `stylus`
- - CSS framework - `boostrap`
- - View engine - `pug`
- - Task runner - `gulp`
- - JS linter - `eslint`
+### Set
+- **Framework**: Angular v1.6.x
+- **Language**: Javascript ES6
+- **Build tool**: webpack
+- **CSS preprocessor**: - stylus
+- **CSS framework**: - boostrap
+- **Template engine**: - pug
+- **Task runner**: gulp
+- **Linters**: eslint, pug-lint
 
 ### How to use
 ```sh
