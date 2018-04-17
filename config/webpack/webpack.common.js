@@ -1,11 +1,13 @@
+'use strict';
+
 process.env.NODE_ENV = process.env.NODE_ENV || 'development';
 
-var webpack               = require('webpack');
-var ExtractTextPlugin     = require('extract-text-webpack-plugin');
-var WebpackNotifierPlugin = require('webpack-notifier');
-var HtmlWebpackPlugin     = require('html-webpack-plugin');
-var CleanWebpackPlugin    = require('clean-webpack-plugin');
-var helpers               = require('./helpers');
+const webpack               = require('webpack');
+const ExtractTextPlugin     = require('extract-text-webpack-plugin');
+const WebpackNotifierPlugin = require('webpack-notifier');
+const HtmlWebpackPlugin     = require('html-webpack-plugin');
+const CleanWebpackPlugin    = require('clean-webpack-plugin');
+const helpers               = require('./helpers');
 
 module.exports = {
   stats: { children: false },

@@ -6,7 +6,7 @@ const TEST   = './test/';
 const SRC    = './src/';
 const DIST   = './dist/';
 
-var config = {
+const config = {
   filters: {
     js: '*.js',
     jsDeep: '**/*.js',

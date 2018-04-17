@@ -1,11 +1,10 @@
 'use strict';
 
-var gulp     = require('gulp');
-var geslint  = require('gulp-eslint');
-var gpuglint = require('gulp-pug-lint');
-var argv     = require('yargs').argv;
-var filters  = require('../config/gulp').filters;
-var paths    = require('../config/gulp').paths;
+const gulp     = require('gulp');
+const geslint  = require('gulp-eslint');
+const gpuglint = require('gulp-pug-lint');
+const filters  = require('../config/gulp').filters;
+const paths    = require('../config/gulp').paths;
 
 gulp.task('lint-scripts', () => {
   return gulp

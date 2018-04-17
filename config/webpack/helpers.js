@@ -1,8 +1,9 @@
-var path = require('path');
+'use strict';
 
-var _root = path.resolve(__dirname, '../..');
+const path = require('path');
 
-exports.root = function(args) {
-  args = Array.prototype.slice.call(arguments, 0);
+const _root = path.resolve(__dirname, '../..');
+
+exports.root = (...args) => {
   return path.join.apply(path, [_root].concat(args));
 };
