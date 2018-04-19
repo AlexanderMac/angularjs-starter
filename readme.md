@@ -1,7 +1,7 @@
-# angular1-starter
+# angular-starter
 `angular 1` project template.
 
-[![Build Status](https://travis-ci.org/AlexanderMac/angular1-starter.svg?branch=master)](https://travis-ci.org/AlexanderMac/angular1-starter)
+[![Build Status](https://travis-ci.org/AlexanderMac/angular-starter.svg?branch=master)](https://travis-ci.org/AlexanderMac/angular-starter)
 
 ### Features
 - ES6
@@ -22,10 +22,10 @@
 ### How to use
 ```sh
 # Clone this repo:
-$ git clone https://github.com/AlexanderMac/angular1-starter.git
+$ git clone https://github.com/AlexanderMac/angular-starter.git
 
 # Init your repo:
-$ cd angular1-starter && rm -rf .git && git init
+$ cd angular-starter && rm -rf .git && git init
 
 # Install dependencies:
 $ npm i

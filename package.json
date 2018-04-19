@@ -1,7 +1,7 @@
 {
-  "name": "angular1-starter",
+  "name": "angular-starter",
   "version": "0.0.1",
-  "description": "angular1-starter",
+  "description": "angular-starter",
   "private": true,
   "scripts": {
     "start": "node_modules/.bin/webpack-dev-server --config ./config/webpack/webpack.development",
@@ -47,12 +47,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/AlexanderMac/angular1-starter"
+    "url": "https://github.com/AlexanderMac/angular-starter"
   },
   "author": "Alexander Mac",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/AlexanderMac/angular1-starter/issues"
+    "url": "https://github.com/AlexanderMac/angular-starter/issues"
   },
-  "homepage": "https://github.com/AlexanderMac/angular1-starter"
+  "homepage": "https://github.com/AlexanderMac/angular-starter"
 }
