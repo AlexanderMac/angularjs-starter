@@ -10,11 +10,11 @@
 - Clean code:)
 
 ### Set
-- **Framework**: Angular v1.6.x
+- **Framework**: Angular v1.6
 - **Language**: Javascript ES6
-- **Build tool**: webpack
-- **CSS preprocessor**: - stylus
-- **CSS framework**: - boostrap
+- **Build tool**: webpack v3
+- **CSS preprocessor**: stylus
+- **CSS framework**: boostrap v3
 - **Template engine**: - pug
 - **Task runner**: gulp
 - **Linters**: eslint, pug-lint
