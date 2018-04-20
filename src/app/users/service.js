@@ -1,4 +1,4 @@
-export class UsersService {
+export class UserService {
   constructor(MemoryRepoService) {
     this.memoryRepoSrvc = MemoryRepoService;
   }

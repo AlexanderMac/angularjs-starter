@@ -1,5 +1,5 @@
 import * as ng           from 'angular';
-import { HomeComponent } from './home.component';
+import { HomeComponent } from './component';
 
 export default ng
   .module('app.home', ['ngRoute'])

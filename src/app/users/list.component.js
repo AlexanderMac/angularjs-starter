@@ -1,17 +1,21 @@
 class UsersListController {
-  constructor($location, $routeParams, NotificationService, UsersService) {
+  constructor($location, $routeParams, NotificationService, UserService) {
     this.ngLocationSrvc = $location;
-    this.usersSrvc = UsersService;
+    this.userSrvc = UserService;
     this.notificationSrvc = NotificationService;
     this.userId = $routeParams._id;
   }
 
   $onInit() {
     this.isLoading = true;
-    return this.usersSrvc
+    this._loadUsers();
+  }
+
+  _loadUsers() {
+    return this.userSrvc
       .getUsers()
       .then(users => this.users = users)
-      .catch(err => this.notificationSrvc.error(err, 'Unable to load records'))
+      .catch(err => this.notificationSrvc.error(err, 'Unable to load users'))
       .finally(() => this.isLoading = false);
   }
 
@@ -30,7 +34,7 @@ class UsersListController {
     }
 
     this.isSaving = true;
-    this.usersSrvc
+    this.userSrvc
       .deleteUser(user._id)
       .then(() => {
         _.remove(this.users, user);
@@ -42,6 +46,6 @@ class UsersListController {
 }
 
 export const UsersListComponent = {
-  template: require('./users-list.component.pug'),
+  template: require('./list.component.pug'),
   controller: UsersListController
 };

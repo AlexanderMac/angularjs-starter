@@ -1,10 +1,10 @@
 import * as ng                  from 'angular';
-import { UsersListComponent }   from './users-list.component';
-import { UserFormComponent }    from './user-form.component';
-import { UserDetailsComponent } from './user-details.component';
-import { UsersService }         from './users.service';
+import { UsersListComponent }   from './list.component';
+import { UserFormComponent }    from './form.component';
+import { UserDetailsComponent } from './details.component';
+import { UserService }          from './service';
 
-import './users.styl';
+import './styles.styl';
 
 export default ng
   .module('app.users', ['ngRoute'])
@@ -26,5 +26,5 @@ export default ng
   .component('usersList', UsersListComponent)
   .component('userForm', UserFormComponent)
   .component('userDetails', UserDetailsComponent)
-  .service('UsersService', UsersService)
+  .service('UserService', UserService)
   .name;

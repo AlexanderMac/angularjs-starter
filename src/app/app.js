@@ -1,9 +1,9 @@
 import * as ng from 'angular';
 
-import './common/common.module';
-import './services/services.module';
-import './home/home.module';
-import './users/users.module';
+import './common/module';
+import './services/module';
+import './home/module';
+import './users/module';
 
 import './app.styl';
 
