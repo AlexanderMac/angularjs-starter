@@ -1,7 +1,6 @@
 import * as ng from 'angular';
 
-import './common/module';
-import './services/module';
+import './_common/module';
 import './home/module';
 import './users/module';
 
@@ -11,7 +10,6 @@ ng
   .module('app', [
     'ngRoute',
     'app.common',
-    'app.services',
     'app.home',
     'app.users',
   ])
