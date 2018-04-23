@@ -18,7 +18,7 @@ ng
 
     $routeProvider
       .when('/not-found', {
-        template: require('./common/not-found.pug'),
+        template: require('./_common/not-found.pug'),
       })
       .otherwise({
         redirectTo: '/not-found'
