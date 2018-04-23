@@ -10,8 +10,8 @@
     "lint": "gulp lint"
   },
   "dependencies": {
-    "angular": "^1.6.9",
-    "angular-route": "^1.6.9",
+    "angular": "^1.6.10",
+    "angular-route": "^1.6.10",
     "bootstrap": "^3.3.7",
     "lodash": "^4.17.5",
     "spinkit": "^1.2.5",
