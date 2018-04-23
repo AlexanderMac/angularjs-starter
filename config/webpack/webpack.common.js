@@ -92,15 +92,6 @@ module.exports = {
       helpers.root('./src/app')
     ),
 
-    new webpack.ProvidePlugin({
-      $: 'jquery',
-      jQuery: 'jquery',
-      'window.jQuery': 'jquery',
-      moment: 'moment'
-    }),
-
-    new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
-
     new HtmlWebpackPlugin({
       template: './src/public/index.pug',
       inject: 'body'
