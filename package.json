@@ -4,9 +4,9 @@
   "description": "angular-starter",
   "private": true,
   "scripts": {
-    "start": "node_modules/.bin/webpack-dev-server --config ./config/webpack/webpack.development",
-    "build": "node_modules/.bin/webpack --config ./config/webpack/webpack.development --display-entrypoints",
-    "build:production": "node_modules/.bin/webpack --config ./config/webpack/webpack.production",
+    "build": "webpack --config ./config/webpack/webpack.development --progress --display-error-details",
+    "build:production": "webpack --config ./config/webpack/webpack.production",
+    "start": "webpack-dev-server --config ./config/webpack/webpack.development",
     "lint": "gulp lint"
   },
   "dependencies": {
