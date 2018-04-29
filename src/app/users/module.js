@@ -16,10 +16,10 @@ export default ng
       .when('/users/new', {
         template: '<user-form></user-form>'
       })
-      .when('/users/:_id/edit', {
+      .when('/users/:id/edit', {
         template: '<user-form></user-form>'
       })
-      .when('/users/:_id', {
+      .when('/users/:id', {
         template: '<user-details></user-details>'
       });
   })

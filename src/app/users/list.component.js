@@ -3,7 +3,7 @@ class UsersListController {
     this.ngLocationSrvc = $location;
     this.userSrvc = UserService;
     this.notificationSrvc = NotificationService;
-    this.userId = $routeParams._id;
+    this.userId = $routeParams.id;
   }
 
   $onInit() {
@@ -20,11 +20,11 @@ class UsersListController {
   }
 
   userDetails(user) {
-    this.ngLocationSrvc.path(`/users/${user._id}`);
+    this.ngLocationSrvc.path(`/users/${user.id}`);
   }
 
   editUser(user) {
-    this.ngLocationSrvc.path(`/users/${user._id}/edit`);
+    this.ngLocationSrvc.path(`/users/${user.id}/edit`);
   }
 
   deleteUser(user) {
@@ -35,7 +35,7 @@ class UsersListController {
 
     this.isSaving = true;
     this.userSrvc
-      .deleteUser(user._id)
+      .deleteUser(user.id)
       .then(() => {
         _.remove(this.users, user);
         this.notificationSrvc.info('User deleted successfully');

@@ -3,9 +3,9 @@ export class UserService {
     this.memoryRepoSrvc = MemoryRepoService;
   }
 
-  getUser(data = {}) {
+  getUser(id) {
     return this.memoryRepoSrvc
-      .getOne(data._id)
+      .getOne(id)
       .then(res => res.data);
   }
 
@@ -27,7 +27,7 @@ export class UserService {
       .then(res => res.data);
   }
 
-  deleteUser(_id) {
-    return this.memoryRepoSrvc.delete(_id);
+  deleteUser(id) {
+    return this.memoryRepoSrvc.delete(id);
   }
 }

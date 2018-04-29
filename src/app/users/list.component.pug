@@ -1,31 +1,28 @@
-nav-bar
+navbar
 
 spinner(ng-if="$ctrl.isLoading")
 .container(ng-if="!$ctrl.isLoading")
-  .row
-    .col-md-12
-      h2 Users
-  .row
-    .col-md-12
-      a.btn.btn-default.btn-primary(href="#/users/new") New User
-  .row
-    .col-md-12
-      table.table.table-striped.users
-        thead
-          tr
-            td
-              strong Name
-            td.email
-              strong Email
-            td
-        tbody
-          tr(ng-repeat="user in $ctrl.users")
-            td {{ user.name }}
-            td {{ user.email }}
-            td.actions
-              button.btn.btn-info.btn-sm(title="View" ng-click="$ctrl.userDetails(user)" ng-disabled="$ctrl.isSaving")
-                span.glyphicon.glyphicon-eye-open
-              button.btn.btn-warning.btn-sm(title="Edit" ng-click="$ctrl.editUser(user)" ng-disabled="$ctrl.isSaving")
-                span.glyphicon.glyphicon-pencil
-              button.btn.btn-danger.btn-sm(title="Delete" ng-click="$ctrl.deleteUser(user)" ng-disabled="$ctrl.isSaving")
-                span.glyphicon.glyphicon-trash
+   h2 Users
+   a.btn.btn-default.btn-primary(href="#/users/new") New User
+   table.table.table-striped.users
+    thead
+      tr
+        th.id
+          strong #
+        th
+          strong Name
+        th.email
+          strong Email
+        th.actions
+    tbody
+      tr(ng-repeat="user in $ctrl.users")
+        td {{ user.id }}
+        td {{ user.name }}
+        td {{ user.email }}
+        td
+          button.btn.btn-info.btn-sm(title="View" ng-click="$ctrl.userDetails(user)" ng-disabled="$ctrl.isSaving")
+            span.glyphicon.glyphicon-eye-open
+          button.btn.btn-warning.btn-sm(title="Edit" ng-click="$ctrl.editUser(user)" ng-disabled="$ctrl.isSaving")
+            span.glyphicon.glyphicon-pencil
+          button.btn.btn-danger.btn-sm(title="Delete" ng-click="$ctrl.deleteUser(user)" ng-disabled="$ctrl.isSaving")
+            span.glyphicon.glyphicon-trash

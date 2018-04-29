@@ -3,21 +3,18 @@ class UserDetailsController {
     this.ngLocationSrvc = $location;
     this.notificationSrvc = NotificationService;
     this.userSrvc = UserService;
-    this.userId = $routeParams._id;
+    this.userId = +$routeParams.id;
   }
 
   $onInit() {
-    this.isLoading = true;
     this._loadUser();
   }
 
   _loadUser() {
+    this.isLoading = true;
     return this.userSrvc
-      .getUser({ _id: this.userId })
-      .then(user => {
-        this.user = user;
-        this.isLoading = false;
-      })
+      .getUser(this.userId)
+      .then(user => this.user = user)
       .catch(err => {
         this.notificationSrvc.error(err, 'Unable to load user');
         this.ngLocationSrvc.path('/users');

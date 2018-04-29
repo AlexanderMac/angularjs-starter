@@ -1,12 +1,10 @@
-nav-bar
+navbar
 
 spinner(ng-if="$ctrl.isLoading")
 .container(ng-if="!$ctrl.isLoading")
-  .row
-    .col-md-12
-      h2
-        span(ng-if="$ctrl.userId") Edit User {{ ::user.name }}
-        span(ng-if="!$ctrl.userId") Create User
+  h2
+    span(ng-if="$ctrl.userId") Edit User {{ ::user.name }}
+    span(ng-if="!$ctrl.userId") Create User
 
   .row
     .col-md-12
@@ -22,8 +20,6 @@ spinner(ng-if="$ctrl.isLoading")
             input.form-control(name="email" placeholder="Email" ng-model="$ctrl.user.email" 
                                ng-required="true" ng-disabled="$ctrl.isSaving")
 
-  .row
-    .col-md-12
-      .buttons.text-right
-        a.btn.btn-default(href="#/users") Cancel
-        button.btn.btn-primary(ng-click="$ctrl.saveUser()" ng-disabled="userForm.$invalid || $ctrl.isSaving") Save
+  .buttons.text-right
+    a.btn.btn-default(href="#/users") Cancel
+    button.btn.btn-primary(ng-click="$ctrl.saveUser()" ng-disabled="userForm.$invalid || $ctrl.isSaving") Save
