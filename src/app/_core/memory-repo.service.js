@@ -7,8 +7,8 @@ export class MemoryRepoService {
     this.nextId = 0;
   }
 
-  getOne(_id) {
-    let res = _.find(this.models, { _id: parseInt(_id) });
+  getOne(id) {
+    let res = _.find(this.models, { id: parseInt(id) });
     return this.ngQPromise.resolve({ data: res });
   }
 
@@ -18,19 +18,19 @@ export class MemoryRepoService {
   }
 
   create(model) {
-    model._id = ++this.nextId;
+    model.id = ++this.nextId;
     this.models.push(model);
     return this.ngQPromise.resolve({ data: model });
   }
 
   update(modelData) {
-    let model = _.find(this.models, { _id: parseInt(modelData._id) });
+    let model = _.find(this.models, { id: parseInt(modelData.id) });
     _.extend(model, modelData);
     return this.ngQPromise.resolve({ data: model });
   }
 
-  delete(_id) {
-    _.remove(this.models, { _id: parseInt(_id) });
+  delete(id) {
+    _.remove(this.models, { id: parseInt(id) });
     return this.ngQPromise.resolve({});
   }
 }
