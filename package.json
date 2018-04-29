@@ -12,7 +12,7 @@
   "dependencies": {
     "angular": "^1.6.10",
     "angular-route": "^1.6.10",
-    "bootstrap": "^3.3.7",
+    "bootstrap": "^4.1.0",
     "lodash": "^4.17.5",
     "spinkit": "^1.2.5",
     "toastr": "^2.1.4"

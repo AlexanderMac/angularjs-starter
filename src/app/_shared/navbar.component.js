@@ -3,8 +3,12 @@ class NavBarController {
     this.ngLocationSrvc = $location;
   }
 
-  isActive(route) {
-    return _.startsWith(this.ngLocationSrvc.path(), route);
+  isActive(route, fullMatch) {
+    let currentPath = this.ngLocationSrvc.path();
+    if (!fullMatch) {
+      return _.startsWith(currentPath, route);
+    }
+    return route === currentPath;
   }
 }
 

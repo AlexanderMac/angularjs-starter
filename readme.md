@@ -14,7 +14,7 @@
 - **Language**: Javascript ES6
 - **Build tool**: webpack v3
 - **CSS preprocessor**: stylus
-- **CSS framework**: boostrap v3
+- **CSS framework**: boostrap v4
 - **Template engine**: - pug
 - **Task runner**: gulp
 - **Linters**: eslint, pug-lint
