@@ -15,10 +15,14 @@ export class NotificationService {
   }
 
   warning(err) {
+    // eslint-disable-next-line no-console
+    console.error(err);
     Toastr.warning(err.reason ? err.reason : 'Unknown error');
   }
 
   error(err) {
+    // eslint-disable-next-line no-console
+    console.error(err);
     Toastr.error(err.reason ? err.reason : 'Unknown error');
   }
 }
