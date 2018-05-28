@@ -5,6 +5,8 @@ const commonConfig = require('./webpack.common.js');
 const helpers      = require('./helpers');
 
 module.exports = webpackMerge(commonConfig, {
+  mode: 'development',
+
   devtool: 'inline-source-map',
 
   devServer: {

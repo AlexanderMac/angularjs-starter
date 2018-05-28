@@ -1,4 +1,5 @@
 import * as ng from 'angular';
+import 'angular-route';
 
 import './_core/module';
 import './_shared/module';
