@@ -10,17 +10,17 @@
     "lint": "gulp lint"
   },
   "dependencies": {
-    "angular": "^1.6.10",
-    "angular-route": "^1.6.10",
-    "bootstrap": "^4.1.0",
-    "lodash": "^4.17.5",
+    "angular": "^1.7.0",
+    "angular-route": "^1.7.0",
+    "bootstrap": "^4.1.1",
+    "lodash": "^4.17.10",
     "spinkit": "^1.2.5",
     "toastr": "^2.1.4"
   },
   "devDependencies": {
-    "babel-core": "^6.26.0",
+    "babel-core": "^6.26.3",
     "babel-loader": "^7.1.4",
-    "babel-preset-env": "^1.6.1",
+    "babel-preset-env": "^1.7.0",
     "clean-webpack-plugin": "^0.1.19",
     "css-loader": "^0.28.11",
     "eslint": "^4.19.1",
