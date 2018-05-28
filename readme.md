@@ -10,9 +10,9 @@
 - Clean code:)
 
 ### Set
-- **Framework**: Angular v1.6
+- **Framework**: Angular v1.7
 - **Language**: Javascript ES6
-- **Build tool**: webpack v3
+- **Build tool**: webpack v4
 - **CSS preprocessor**: stylus
 - **CSS framework**: boostrap v4
 - **Template engine**: - pug
