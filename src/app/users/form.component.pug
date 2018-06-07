@@ -1,7 +1,7 @@
 navbar
 
 spinner(ng-if="$ctrl.isLoading")
-.container(ng-if="!$ctrl.isLoading")
+.container.user-form(ng-if="!$ctrl.isLoading")
   h2
     span(ng-if="$ctrl.userId") Edit User {{ ::user.name }}
     span(ng-if="!$ctrl.userId") Create User
@@ -38,6 +38,10 @@ spinner(ng-if="$ctrl.isLoading")
         )
         .invalid-feedback Email is required
 
+    .form-group.form-check.row
+      .offset-md-3.col-md-9
+        role-multiselector(initial-roles="$ctrl.user.roles" on-change="$ctrl.onChangeRoles(roles)")
+
   .buttons.text-right
     a.btn.btn-light(href="#/users") Cancel
-    button.btn.btn-primary(ng-click="$ctrl.saveUser()" ng-disabled="userForm.$invalid || $ctrl.isSaving") Save
+    button.btn.btn-primary(ng-click="$ctrl.saveUser()" ng-disabled="userForm.$invalid || $ctrl.user.roles.length === 0 || $ctrl.isSaving") Save

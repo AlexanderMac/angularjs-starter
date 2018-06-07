@@ -8,7 +8,9 @@ class UserFormController {
 
   $onInit() {
     if (!this.userId) {
-      this.user = {};
+      this.user = {
+        roles: []
+      };
       return;
     }
     this._loadUser();
@@ -18,12 +20,19 @@ class UserFormController {
     this.isLoading = true;
     return this.userSrvc
       .getUser(this.userId)
-      .then(user => this.user = user)
+      .then(user => {
+        user.roles = _.map(user.roles, r => +r);
+        this.user = user;
+      })
       .catch(err => {
         this.notificationSrvc.error(err, 'Unable to load user');
         this.ngLocationSrvc.path('/users');
       })
       .finally(() => this.isLoading = false);
+  }
+
+  onChangeRoles(roles) {
+    this.user.roles = roles;
   }
 
   saveUser() {
