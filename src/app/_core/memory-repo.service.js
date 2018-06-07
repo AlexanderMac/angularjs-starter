@@ -8,24 +8,28 @@ export class MemoryRepoService {
   }
 
   getOne(id) {
-    let res = _.find(this.models, { id: parseInt(id) });
-    return this.ngQPromise.resolve(res);
+    let model = _.chain(this.models)
+      .find({ id: parseInt(id) })
+      .cloneDeep()
+      .value();
+    return this.ngQPromise.resolve(model);
   }
 
   getList() {
-    return this.ngQPromise.resolve(this.models);
+    let models = _.cloneDeep(this.models);
+    return this.ngQPromise.resolve(models);
   }
 
   create(model) {
     model.id = ++this.nextId;
-    this.models.push(model);
+    this.models.push(_.cloneDeep(model));
     return this.ngQPromise.resolve(model);
   }
 
   update(modelData) {
     let model = _.find(this.models, { id: parseInt(modelData.id) });
     _.extend(model, modelData);
-    return this.ngQPromise.resolve(model);
+    return this.ngQPromise.resolve(_.cloneDeep(model));
   }
 
   delete(id) {
