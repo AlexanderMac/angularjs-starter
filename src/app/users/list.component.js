@@ -1,20 +1,35 @@
 class UsersListController {
-  constructor($location, $routeParams, NotificationService, UserService) {
+  constructor($q, $location, $routeParams, NotificationService, RoleService, UserService) {
+    this.ngQSrvc = $q;
     this.ngLocationSrvc = $location;
+    this.roleSrvc = RoleService;
     this.userSrvc = UserService;
     this.notificationSrvc = NotificationService;
     this.userId = $routeParams.id;
   }
 
   $onInit() {
-    this.isLoading = true;
     this._loadUsers();
   }
 
   _loadUsers() {
-    return this.userSrvc
-      .getUsers()
-      .then(users => this.users = users)
+    this.isLoading = true;
+    return this.ngQSrvc
+      .all([
+        this.roleSrvc.getRoles(),
+        this.userSrvc.getUsers()
+      ])
+      .then(([roles, users]) => {
+        _.each(users, user => {
+          user.roles = _.chain(user.roles)
+            .map(userRoleId => _.find(roles, { id: +userRoleId }))
+            .map(role => role ? role.name : '')
+            .compact()
+            .join(',')
+            .value();
+        });
+        this.users = users;
+      })
       .catch(err => this.notificationSrvc.error(err, 'Unable to load users'))
       .finally(() => this.isLoading = false);
   }

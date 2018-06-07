@@ -1,7 +1,7 @@
 navbar
 
 spinner(ng-if="$ctrl.isLoading")
-.container(ng-if="!$ctrl.isLoading")
+.container.user-list(ng-if="!$ctrl.isLoading")
    h2 Users
    a.btn.btn-primary(href="#/users/new") New User
    table.table.table-striped.users
@@ -10,12 +10,14 @@ spinner(ng-if="$ctrl.isLoading")
         th.id(scope="col") #
         th(scope="col") Name
         th.email(scope="col") Email
+        th.email(scope="col") Roles
         th.actions(scope="col")
     tbody
       tr(ng-repeat="user in $ctrl.users")
         td {{ user.id }}
         td {{ user.name }}
         td {{ user.email }}
+        td {{ user.roles }}
         td.actions
           button.btn.btn-info.btn-sm(title="View" ng-click="$ctrl.userDetails(user)" ng-disabled="$ctrl.isSaving") View
           button.btn.btn-warning.btn-sm(title="Edit" ng-click="$ctrl.editUser(user)" ng-disabled="$ctrl.isSaving") Edit
