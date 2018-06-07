@@ -1,7 +1,9 @@
 class UserDetailsController {
-  constructor($location, $routeParams, NotificationService, UserService) {
+  constructor($q, $location, $routeParams, NotificationService, RoleService, UserService) {
+    this.ngQSrvc = $q;
     this.ngLocationSrvc = $location;
     this.notificationSrvc = NotificationService;
+    this.roleSrvc = RoleService;
     this.userSrvc = UserService;
     this.userId = +$routeParams.id;
   }
@@ -12,9 +14,20 @@ class UserDetailsController {
 
   _loadUser() {
     this.isLoading = true;
-    return this.userSrvc
-      .getUser(this.userId)
-      .then(user => this.user = user)
+    return this.ngQSrvc
+      .all([
+        this.roleSrvc.getRoles(),
+        this.userSrvc.getUser(this.userId)
+      ])
+      .then(([roles, user]) => {
+        user.roles = _.chain(user.roles)
+          .map(userRoleId => _.find(roles, { id: +userRoleId }))
+          .map(role => role ? role.name : '')
+          .compact()
+          .join(',')
+          .value();
+        this.user = user;
+      })
       .catch(err => {
         this.notificationSrvc.error(err, 'Unable to load user');
         this.ngLocationSrvc.path('/users');

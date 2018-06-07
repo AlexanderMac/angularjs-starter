@@ -1,10 +1,14 @@
 navbar
 
 spinner(ng-if="$ctrl.isLoading")
-.container(ng-if="!$ctrl.isLoading")
+.container.user-details(ng-if="!$ctrl.isLoading")
   h2 {{ $ctrl.user.name }}
-  p Email:&nbsp;
+  p
+    strong Email:
     a(href="mailto:{{ $ctrl.user.email }}") {{ $ctrl.user.email }}
+  p
+    strong Roles:
+    span {{ $ctrl.user.roles }}
   .buttons.text-right
     a.btn.btn-light(href="#/users") Cancel
     a.btn.btn-primary(href="#/users/{{ $ctrl.user.id }}/edit") Edit
