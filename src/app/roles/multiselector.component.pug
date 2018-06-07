@@ -1,0 +1,10 @@
+.form-check.form-check-inline(ng-repeat="role in $ctrl.roles")
+  input.form-check-input(
+    type="checkbox"
+    id="{{ role.id }}"
+    ng-model="$ctrl.selectedRoles[role.id]"
+    ng-change="$ctrl.changeRole()"
+    ng-class="{ 'is-invalid': $ctrl.isNoRoleSelected }"
+  )
+  label.form-check-label(for="{{ role.id }}") {{ role.name }}
+.invalid-input(ng-if="$ctrl.isNoRoleSelected") Select at least one role

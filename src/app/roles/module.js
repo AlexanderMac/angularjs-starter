@@ -1,8 +1,9 @@
-import * as ng                  from 'angular';
-import { RolesListComponent }   from './list.component';
-import { RoleFormComponent }    from './form.component';
-import { RoleDetailsComponent } from './details.component';
-import { RoleService }          from './service';
+import * as ng                        from 'angular';
+import { RolesListComponent }         from './list.component';
+import { RoleFormComponent }          from './form.component';
+import { RoleDetailsComponent }       from './details.component';
+import { RoleMultiselectorComponent } from './multiselector.component';
+import { RoleService }                from './service';
 
 import './styles.styl';
 
@@ -26,5 +27,6 @@ export default ng
   .component('rolesList', RolesListComponent)
   .component('roleForm', RoleFormComponent)
   .component('roleDetails', RoleDetailsComponent)
+  .component('roleMultiselector', RoleMultiselectorComponent)
   .service('RoleService', RoleService)
   .name;
