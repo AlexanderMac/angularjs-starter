@@ -60,3 +60,7 @@ export class LocalStorageRepoService extends MemoryRepoService {
       });
   }
 }
+
+export function LocalStorageRepoServiceFactory() {
+  return LocalStorageRepoService;
+}

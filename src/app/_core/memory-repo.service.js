@@ -9,28 +9,31 @@ export class MemoryRepoService {
 
   getOne(id) {
     let res = _.find(this.models, { id: parseInt(id) });
-    return this.ngQPromise.resolve({ data: res });
+    return this.ngQPromise.resolve(res);
   }
 
   getList() {
-    let res = this.models;
-    return this.ngQPromise.resolve({ data: res });
+    return this.ngQPromise.resolve(this.models);
   }
 
   create(model) {
     model.id = ++this.nextId;
     this.models.push(model);
-    return this.ngQPromise.resolve({ data: model });
+    return this.ngQPromise.resolve(model);
   }
 
   update(modelData) {
     let model = _.find(this.models, { id: parseInt(modelData.id) });
     _.extend(model, modelData);
-    return this.ngQPromise.resolve({ data: model });
+    return this.ngQPromise.resolve(model);
   }
 
   delete(id) {
     _.remove(this.models, { id: parseInt(id) });
-    return this.ngQPromise.resolve({});
+    return this.ngQPromise.resolve();
   }
+}
+
+export function MemoryRepoServiceFactory() {
+  return MemoryRepoService;
 }
