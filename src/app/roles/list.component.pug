@@ -1,0 +1,22 @@
+navbar
+
+spinner(ng-if="$ctrl.isLoading")
+.container.role-list(ng-if="!$ctrl.isLoading")
+   h2 Roles
+   a.btn.btn-primary(href="#/roles/new") New Role
+   table.table.table-striped.roles
+    thead
+      tr
+        th.id(scope="col") #
+        th(scope="col") Name
+        th.actions(scope="col")
+    tbody
+      tr(ng-repeat="role in $ctrl.roles")
+        td {{ role.id }}
+        td {{ role.name }}
+        td.actions
+          button.btn.btn-info.btn-sm(title="View" ng-click="$ctrl.roleDetails(role)" ng-disabled="$ctrl.isSaving") View
+          button.btn.btn-warning.btn-sm(title="Edit" ng-click="$ctrl.editRole(role)" ng-disabled="$ctrl.isSaving") Edit
+          button.btn.btn-danger.btn-sm(title="Delete" ng-click="$ctrl.deleteRole(role)" ng-disabled="$ctrl.isSaving") Delete
+      tr(ng-if="roles.length === 0")
+        td.text-center(colspan="3") No roles

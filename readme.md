@@ -5,8 +5,7 @@
 
 ### Features
 - ES6
-- Configured Webpack
-- User CRUD
+- Users/Roles CRUD
 - Clean code:)
 
 ### Set

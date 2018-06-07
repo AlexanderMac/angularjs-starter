@@ -5,6 +5,7 @@ import './_core/module';
 import './_shared/module';
 import './home/module';
 import './users/module';
+import './roles/module';
 
 import './app.styl';
 
@@ -15,6 +16,7 @@ ng
     'app.shared',
     'app.home',
     'app.users',
+    'app.roles'
   ])
   .config(($routeProvider, $locationProvider) => {
     $locationProvider.hashPrefix('');

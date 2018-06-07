@@ -1,0 +1,28 @@
+navbar
+
+spinner(ng-if="$ctrl.isLoading")
+.container.role-form(ng-if="!$ctrl.isLoading")
+  h2
+    span(ng-if="$ctrl.roleId") Edit Role {{ ::role.name }}
+    span(ng-if="!$ctrl.roleId") Create Role
+    hr
+
+  form(name="roleForm")
+    .form-group.row
+      label.col-md-3.col-form-label(for="name") Name*
+      .col-md-9
+        input.form-control(
+          id="name"
+          name="name"
+          type="text"
+          placeholder="Name"
+          required="true"
+          ng-model="$ctrl.role.name"
+          ng-disabled="$ctrl.isSaving"
+          ng-class="{ 'is-invalid': roleForm.name.$invalid || roleForm.name.$error.required }"
+        )
+        .invalid-feedback Name is required
+
+  .buttons.text-right
+    a.btn.btn-light(href="#/roles") Cancel
+    button.btn.btn-primary(ng-click="$ctrl.saveRole()" ng-disabled="roleForm.$invalid || $ctrl.isSaving") Save

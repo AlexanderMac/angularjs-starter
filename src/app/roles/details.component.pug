@@ -1,0 +1,8 @@
+navbar
+
+spinner(ng-if="$ctrl.isLoading")
+.container.role-details(ng-if="!$ctrl.isLoading")
+  h2 {{ $ctrl.role.name }}
+  .buttons.text-right
+    a.btn.btn-light(href="#/roles") Cancel
+    a.btn.btn-primary(href="#/roles/{{ $ctrl.role.id }}/edit") Edit
