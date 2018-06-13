@@ -1,21 +1,21 @@
-class RolesListController {
+class RoleListController {
   constructor($location, $routeParams, NotificationService, RoleService) {
     this.ngLocationSrvc = $location;
     this.roleSrvc = RoleService;
-    this.notificationSrvc = NotificationService;
+    this.ntfsSrvc = NotificationService;
     this.roleId = $routeParams.id;
   }
 
   $onInit() {
-    this.isLoading = true;
     this._loadRoles();
   }
 
   _loadRoles() {
+    this.isLoading = true;
     return this.roleSrvc
       .getRoles()
       .then(roles => this.roles = roles)
-      .catch(err => this.notificationSrvc.error(err, 'Unable to load roles'))
+      .catch(err => this.ntfsSrvc.error(err, 'Unable to load roles'))
       .finally(() => this.isLoading = false);
   }
 
@@ -38,14 +38,14 @@ class RolesListController {
       .deleteRole(role.id)
       .then(() => {
         _.remove(this.roles, role);
-        this.notificationSrvc.info('Role deleted successfully');
+        this.ntfsSrvc.info('Role deleted successfully');
       })
-      .catch(err => this.notificationSrvc.error(err, 'Unable to delete role'))
+      .catch(err => this.ntfsSrvc.error(err, 'Unable to delete role'))
       .finally(() => this.isSaving = false);
   }
 }
 
-export const RolesListComponent = {
+export const RoleListComponent = {
   template: require('./list.component.pug'),
-  controller: RolesListController
+  controller: RoleListController
 };

@@ -1,7 +1,7 @@
 class RoleFormController {
   constructor($location, $routeParams, NotificationService, RoleService) {
     this.ngLocationSrvc = $location;
-    this.notificationSrvc = NotificationService;
+    this.ntfsSrvc = NotificationService;
     this.roleSrvc = RoleService;
     this.roleId = +$routeParams.id;
   }
@@ -20,7 +20,7 @@ class RoleFormController {
       .getRole(this.roleId)
       .then(role => this.role = role)
       .catch(err => {
-        this.notificationSrvc.error(err, 'Unable to load role');
+        this.ntfsSrvc.error(err, 'Unable to load role');
         this.ngLocationSrvc.path('/roles');
       })
       .finally(() => this.isLoading = false);
@@ -31,10 +31,10 @@ class RoleFormController {
     let fn = this.roleId ? 'updateRole' : 'createRole';
     this.roleSrvc[fn](this.role)
       .then(() => {
-        this.notificationSrvc.info(`Role ${this.roleId ? 'updated' : 'created'} successfully`);
+        this.ntfsSrvc.info(`Role ${this.roleId ? 'updated' : 'created'} successfully`);
         this.ngLocationSrvc.path('/roles');
       })
-      .catch(err => this.notificationSrvc.error(err, 'Unable to save role'))
+      .catch(err => this.ntfsSrvc.error(err, 'Unable to save role'))
       .finally(() => this.isSaving = false);
   }
 }

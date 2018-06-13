@@ -1,10 +1,10 @@
-class UsersListController {
+class UserListController {
   constructor($q, $location, $routeParams, NotificationService, RoleService, UserService) {
     this.ngQSrvc = $q;
     this.ngLocationSrvc = $location;
     this.roleSrvc = RoleService;
     this.userSrvc = UserService;
-    this.notificationSrvc = NotificationService;
+    this.ntfsSrvc = NotificationService;
     this.userId = $routeParams.id;
   }
 
@@ -30,7 +30,7 @@ class UsersListController {
         });
         this.users = users;
       })
-      .catch(err => this.notificationSrvc.error(err, 'Unable to load users'))
+      .catch(err => this.ntfsSrvc.error(err, 'Unable to load users'))
       .finally(() => this.isLoading = false);
   }
 
@@ -53,14 +53,14 @@ class UsersListController {
       .deleteUser(user.id)
       .then(() => {
         _.remove(this.users, user);
-        this.notificationSrvc.info('User deleted successfully');
+        this.ntfsSrvc.info('User deleted successfully');
       })
-      .catch(err => this.notificationSrvc.error(err, 'Unable to delete user'))
+      .catch(err => this.ntfsSrvc.error(err, 'Unable to delete user'))
       .finally(() => this.isSaving = false);
   }
 }
 
-export const UsersListComponent = {
+export const UserListComponent = {
   template: require('./list.component.pug'),
-  controller: UsersListController
+  controller: UserListController
 };

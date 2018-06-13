@@ -2,7 +2,7 @@ class UserDetailsController {
   constructor($q, $location, $routeParams, NotificationService, RoleService, UserService) {
     this.ngQSrvc = $q;
     this.ngLocationSrvc = $location;
-    this.notificationSrvc = NotificationService;
+    this.ntfsSrvc = NotificationService;
     this.roleSrvc = RoleService;
     this.userSrvc = UserService;
     this.userId = +$routeParams.id;
@@ -29,7 +29,7 @@ class UserDetailsController {
         this.user = user;
       })
       .catch(err => {
-        this.notificationSrvc.error(err, 'Unable to load user');
+        this.ntfsSrvc.error(err, 'Unable to load user');
         this.ngLocationSrvc.path('/users');
       })
       .finally(() => this.isLoading = false);

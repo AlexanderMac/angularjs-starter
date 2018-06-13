@@ -1,7 +1,7 @@
 class UserFormController {
   constructor($location, $routeParams, NotificationService, UserService) {
     this.ngLocationSrvc = $location;
-    this.notificationSrvc = NotificationService;
+    this.ntfsSrvc = NotificationService;
     this.userSrvc = UserService;
     this.userId = +$routeParams.id;
   }
@@ -25,7 +25,7 @@ class UserFormController {
         this.user = user;
       })
       .catch(err => {
-        this.notificationSrvc.error(err, 'Unable to load user');
+        this.ntfsSrvc.error(err, 'Unable to load user');
         this.ngLocationSrvc.path('/users');
       })
       .finally(() => this.isLoading = false);
@@ -40,10 +40,10 @@ class UserFormController {
     let fn = this.userId ? 'updateUser' : 'createUser';
     this.userSrvc[fn](this.user)
       .then(() => {
-        this.notificationSrvc.info(`User ${this.userId ? 'updated' : 'created'} successfully`);
+        this.ntfsSrvc.info(`User ${this.userId ? 'updated' : 'created'} successfully`);
         this.ngLocationSrvc.path('/users');
       })
-      .catch(err => this.notificationSrvc.error(err, 'Unable to save user'))
+      .catch(err => this.ntfsSrvc.error(err, 'Unable to save user'))
       .finally(() => this.isSaving = false);
   }
 }

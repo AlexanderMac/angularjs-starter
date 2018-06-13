@@ -1,5 +1,5 @@
 import * as ng                        from 'angular';
-import { RolesListComponent }         from './list.component';
+import { RoleListComponent }          from './list.component';
 import { RoleFormComponent }          from './form.component';
 import { RoleDetailsComponent }       from './details.component';
 import { RoleMultiselectorComponent } from './multiselector.component';
@@ -12,7 +12,7 @@ export default ng
   .config(($routeProvider) => {
     $routeProvider
       .when('/roles', {
-        template: '<roles-list></roles-list>'
+        template: '<role-list></role-list>'
       })
       .when('/roles/new', {
         template: '<role-form></role-form>'
@@ -24,7 +24,7 @@ export default ng
         template: '<role-details></role-details>'
       });
   })
-  .component('rolesList', RolesListComponent)
+  .component('roleList', RoleListComponent)
   .component('roleForm', RoleFormComponent)
   .component('roleDetails', RoleDetailsComponent)
   .component('roleMultiselector', RoleMultiselectorComponent)

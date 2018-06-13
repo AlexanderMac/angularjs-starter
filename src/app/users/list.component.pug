@@ -9,8 +9,8 @@ spinner(ng-if="$ctrl.isLoading")
       tr
         th.id(scope="col") #
         th(scope="col") Name
-        th.email(scope="col") Email
-        th.email(scope="col") Roles
+        th(scope="col") Email
+        th(scope="col") Roles
         th.actions(scope="col")
     tbody
       tr(ng-repeat="user in $ctrl.users")
@@ -23,4 +23,4 @@ spinner(ng-if="$ctrl.isLoading")
           button.btn.btn-warning.btn-sm(title="Edit" ng-click="$ctrl.editUser(user)" ng-disabled="$ctrl.isSaving") Edit
           button.btn.btn-danger.btn-sm(title="Delete" ng-click="$ctrl.deleteUser(user)" ng-disabled="$ctrl.isSaving") Delete
       tr(ng-if="users.length === 0")
-        td.text-center(colspan="4") No users
+        td.text-center(colspan="5") No users
