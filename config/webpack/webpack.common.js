@@ -54,10 +54,6 @@ module.exports = {
         }
       },
       {
-        test: /\.json$/,
-        loader: 'json-loader'
-      },
-      {
         test: /\.pug$/,
         exclude: /(node_modules)/,
         loaders: [
@@ -106,12 +102,11 @@ module.exports = {
     // TODO: required?
     new webpack.ContextReplacementPlugin(
       /angular(\\|\/)core(\\|\/)(esm(\\|\/)src|src)(\\|\/)linker/,
-      helpers.root('./src/app')
+      helpers.root('src', 'app')
     ),
 
     new HtmlPlugin({
-      template: './src/public/index.pug',
-      inject: 'body'
+      template: 'src/public/index.pug'
     }),
 
     new MiniCssExtractPlugin({

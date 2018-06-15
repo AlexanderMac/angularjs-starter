@@ -2,8 +2,8 @@
 
 const path = require('path');
 
-const _root = path.resolve(__dirname, '../..');
+const ROOT = path.resolve(__dirname, '../..');
 
-exports.root = (...args) => {
-  return path.join.apply(path, [_root].concat(args));
+exports.root = (...paths) => {
+  return path.join(ROOT, ...paths);
 };

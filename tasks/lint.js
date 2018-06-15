@@ -8,7 +8,7 @@ const paths    = require('../config/gulp').paths;
 
 gulp.task('lint-scripts', () => {
   return gulp
-    .src(paths.srcApp + filters.jsDeep)
+    .src(paths.app + filters.jsDeep)
     .pipe(geslint())
     .pipe(geslint.format())
     .pipe(geslint.failAfterError());
@@ -17,7 +17,7 @@ gulp.task('lint-scripts', () => {
 gulp.task('lint-views', () => {
   return gulp
     .src([
-      paths.src + filters.pugDeep,
+      paths.app + filters.pugDeep,
     ])
     .pipe(gpuglint());
 });
