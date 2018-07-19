@@ -6,7 +6,6 @@ node_js:
   - "node"
 
 install:
-  - npm i -g gulp
   - npm i -g webpack
   - npm i
 
