@@ -1,7 +1,7 @@
-# angular-starter
-`AngularJs` project template. Check [angular-next-starter](https://github.com/AlexanderMac/angular-next-starter) if you need an example for Angular next (v2+).
+# angularjs-starter
+`AngularJs` start project template. Check [angular-starter](https://github.com/AlexanderMac/angular-starter) if you need a starter for Angular (v2+). Check [angular-hybrid-starter](https://github.com/AlexanderMac/angular-hybrid-starter) if you need a hybrid-app Angular starter.
 
-[![Build Status](https://travis-ci.org/AlexanderMac/angular-starter.svg?branch=master)](https://travis-ci.org/AlexanderMac/angular-starter)
+[![Build Status](https://travis-ci.org/AlexanderMac/angularjs-starter.svg?branch=master)](https://travis-ci.org/AlexanderMac/angularjs-starter)
 
 ### Features
 - ES6
@@ -21,10 +21,10 @@
 ### How to use
 ```sh
 # Clone this repo:
-git clone https://github.com/AlexanderMac/angular-starter.git
+git clone https://github.com/AlexanderMac/angularjs-starter.git
 
 # Init your repo:
-cd angular-starter && rm -rf .git && git init
+cd angularjs-starter && rm -rf .git && git init
 
 # Install dependencies:
 npm i
