@@ -1,5 +1,7 @@
 # angularjs-starter
-`AngularJs` start project template. Check [angular-starter](https://github.com/AlexanderMac/angular-starter) if you need a starter for Angular (v2+). Check [angular-hybrid-starter](https://github.com/AlexanderMac/angular-hybrid-starter) if you need a hybrid-app Angular starter.
+`AngularJs` start project template.
+- Check [angular-starter](https://github.com/AlexanderMac/angular-starter) if you need a starter for Angular (v2+).
+- Check [angular-hybrid-starter](https://github.com/AlexanderMac/angular-hybrid-starter) if you need a hybrid-app Angular starter.
 
 [![Build Status](https://travis-ci.org/AlexanderMac/angularjs-starter.svg?branch=master)](https://travis-ci.org/AlexanderMac/angularjs-starter)
 
