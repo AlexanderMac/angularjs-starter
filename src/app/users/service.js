@@ -1,6 +1,6 @@
 export class UserService {
-  constructor($q, $window, LocalStorageRepoService) {
-    this.repoSrvc = new LocalStorageRepoService($q, $window);
+  constructor(lsRepoServiceFactory) {
+    this.repoSrvc = lsRepoServiceFactory.getInstance();
     this.repoSrvc.init('Users');
   }
 
@@ -24,3 +24,5 @@ export class UserService {
     return this.repoSrvc.delete(id);
   }
 }
+
+UserService.$inject = ['LocalStorageRepoServiceFactory'];

@@ -1,6 +1,6 @@
 export class RoleService {
-  constructor($q, $window, LocalStorageRepoService) {
-    this.repoSrvc = new LocalStorageRepoService($q, $window);
+  constructor(lsRepoServiceFactory) {
+    this.repoSrvc = lsRepoServiceFactory.getInstance();
     this.repoSrvc.init('Roles');
   }
 
@@ -24,3 +24,5 @@ export class RoleService {
     return this.repoSrvc.delete(id);
   }
 }
+
+RoleService.$inject = ['LocalStorageRepoServiceFactory'];

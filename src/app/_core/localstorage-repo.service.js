@@ -61,6 +61,13 @@ export class LocalStorageRepoService extends BaseService {
   }
 }
 
-export function LocalStorageRepoServiceFactory() {
-  return LocalStorageRepoService;
+export class LocalStorageRepoServiceFactory {
+  constructor($q, $window) {
+    this.$q = $q;
+    this.$window = $window;
+  }
+
+  getInstance() {
+    return new LocalStorageRepoService(this.$q, this.$window);
+  }
 }

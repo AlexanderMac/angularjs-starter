@@ -7,5 +7,5 @@ export default ng
   .module('app.core', [])
   .service('NotificationService', NotificationService)
   .service('MemoryRepoService', MemoryRepoServiceFactory)
-  .service('LocalStorageRepoService', LocalStorageRepoServiceFactory)
+  .service('LocalStorageRepoServiceFactory', LocalStorageRepoServiceFactory)
   .name;
