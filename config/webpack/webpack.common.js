@@ -109,7 +109,7 @@ module.exports = {
         use: [
           'raw-loader',
           MiniCssExtractPlugin.loader,
-          'css-loader?minify'
+          'css-loader'
         ]
       },
       {
@@ -117,7 +117,7 @@ module.exports = {
         exclude: /(node_modules)/,
         use: [
           MiniCssExtractPlugin.loader,
-          'css-loader?minify',
+          'css-loader',
           'stylus-loader'
         ]
       },
