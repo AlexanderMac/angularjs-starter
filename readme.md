@@ -17,7 +17,6 @@
 - **CSS preprocessor**: stylus
 - **CSS framework**: boostrap v4
 - **Template engine**: pug
-- **Task runner**: gulp
 - **Linters**: eslint, pug-lint
 
 ### How to use
