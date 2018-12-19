@@ -5,6 +5,8 @@ node_js:
   - "10"
   - "node"
 
+cache: npm
+
 script:
   - npm run build:production
   - npm run lint
