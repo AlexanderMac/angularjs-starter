@@ -1,9 +1,9 @@
-import * as ng                        from 'angular';
-import { RoleListComponent }          from './list.component';
-import { RoleFormComponent }          from './form.component';
-import { RoleDetailsComponent }       from './details.component';
+import * as ng from 'angular';
+import { RoleListComponent } from './list.component';
+import { RoleFormComponent } from './form.component';
+import { RoleDetailsComponent } from './details.component';
 import { RoleMultiselectorComponent } from './multiselector.component';
-import { RoleService }                from './service';
+import { RoleService } from './service';
 
 import './styles.styl';
 

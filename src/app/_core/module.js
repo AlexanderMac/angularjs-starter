@@ -1,6 +1,6 @@
-import * as ng                            from 'angular';
-import { NotificationService }            from './notification.service';
-import { MemoryRepoServiceFactory }       from './memory-repo.service';
+import * as ng from 'angular';
+import { NotificationService } from './notification.service';
+import { MemoryRepoServiceFactory } from './memory-repo.service';
 import { LocalStorageRepoServiceFactory } from './localstorage-repo.service';
 
 export default ng

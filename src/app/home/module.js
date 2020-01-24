@@ -1,4 +1,4 @@
-import * as ng           from 'angular';
+import * as ng from 'angular';
 import { HomeComponent } from './component';
 
 export default ng

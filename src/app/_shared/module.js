@@ -1,5 +1,5 @@
-import * as ng              from 'angular';
-import { NavBarComponent }  from './navbar.component';
+import * as ng from 'angular';
+import { NavBarComponent } from './navbar.component';
 import { SpinnerComponent } from './spinner.component';
 
 export default ng

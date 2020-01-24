@@ -1,4 +1,4 @@
-import * as _          from 'lodash';
+import * as _ from 'lodash';
 import { BaseService } from './base.service';
 
 export class LocalStorageRepoService extends BaseService {

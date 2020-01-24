@@ -1,8 +1,8 @@
-import * as ng                  from 'angular';
-import { UserListComponent }    from './list.component';
-import { UserFormComponent }    from './form.component';
+import * as ng from 'angular';
+import { UserListComponent } from './list.component';
+import { UserFormComponent } from './form.component';
 import { UserDetailsComponent } from './details.component';
-import { UserService }          from './service';
+import { UserService } from './service';
 
 import './styles.styl';
 
