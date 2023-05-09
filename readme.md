@@ -1,4 +1,6 @@
 # angularjs-starter
+## WARNING :warning:: This repo is not maintained anymore, use [angular-starter](https://github.com/AlexanderMac/angular-starter) instead.
+
 `AngularJs` start project template.
 - Check [angular-starter](https://github.com/AlexanderMac/angular-starter) if you need a starter for Angular (v2+).
 - Check [angular-hybrid-starter](https://github.com/AlexanderMac/angular-hybrid-starter) if you need a hybrid-app Angular starter.
